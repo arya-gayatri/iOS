@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -58,24 +57,16 @@
                         <barButtonItem title="Sort By Rank" id="R3c-ST-3cn"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Your Meals" id="52O-fD-MVQ">
-                        <rightBarButtonItems>
-                            <barButtonItem title="By Rank" id="Bx7-Eh-8HK">
-                                <connections>
-                                    <action selector="sortByRank:" destination="ny2-IF-AEh" id="LY0-uN-tvP"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="By Name" id="C2i-dh-iIA">
-                                <connections>
-                                    <action selector="sortByName:" destination="ny2-IF-AEh" id="0K8-LA-oEx"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Sort" id="D4Z-g3-oUp">
+                            <connections>
+                                <action selector="sortMeals:" destination="ny2-IF-AEh" id="PW9-XB-BOB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mealsTable" destination="ieY-YY-jFR" id="nHY-gM-ics"/>
-                        <outlet property="sortNameButton" destination="C2i-dh-iIA" id="n51-b4-n7B"/>
-                        <outlet property="sortRankButton" destination="Bx7-Eh-8HK" id="hhq-mv-ddL"/>
+                        <outlet property="sortButton" destination="D4Z-g3-oUp" id="Is7-Sh-cd1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDS-Gq-3pc" userLabel="First Responder" sceneMemberID="firstResponder"/>

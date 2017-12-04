@@ -13,9 +13,10 @@ class MealTableViewController: UITableViewController {
     var meals = [Meal]()
 
     @IBOutlet var mealsTable: UITableView!
-    @IBOutlet weak var sortNameButton: UIBarButtonItem!
+    //@IBOutlet weak var sortNameButton: UIBarButtonItem!
     
-    @IBOutlet weak var sortRankButton: UIBarButtonItem!
+    @IBOutlet weak var sortButton: UIBarButtonItem!
+    //@IBOutlet weak var sortRankButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,7 +119,7 @@ class MealTableViewController: UITableViewController {
         meals+=[meal1, meal2, meal3, meal4, meal5]
         
         }
-    
+    /*
     @IBAction func sortByName(_ sender: UIBarButtonItem) {
         
         meals = meals.sorted(by: {$0.name < $1.name})
@@ -130,6 +131,32 @@ class MealTableViewController: UITableViewController {
         
         meals = meals.sorted(by: {$0.rating > $1.rating})
         self.mealsTable.reloadData()
+    }
+    */
+    
+    @IBAction func sortMeals(_ sender: UIBarButtonItem) {
+        
+        let optionsMenu = UIAlertController(title: nil, message: "Sort By", preferredStyle: .actionSheet)
+        
+        let sortByName = UIAlertAction(title: "Name", style: .default, handler: {
+            (alert : UIAlertAction!) -> Void in
+            self.meals = self.meals.sorted(by: {$0.name < $1.name})
+            self.mealsTable.reloadData()
+            
+        })
+        
+        let sortByRank = UIAlertAction(title: "Rank", style: .default, handler: {
+            (alert : UIAlertAction!) -> Void in
+            self.meals = self.meals.sorted(by: {$0.rating > $1.rating})
+            self.mealsTable.reloadData()
+            
+        })
+        
+        optionsMenu.addAction(sortByName)
+        optionsMenu.addAction(sortByRank)
+        
+        self.present(optionsMenu, animated: true, completion: nil)
+        
     }
     
 }
