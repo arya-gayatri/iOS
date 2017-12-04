@@ -57,7 +57,7 @@
                         <barButtonItem title="Sort By Rank" id="R3c-ST-3cn"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Your Meals" id="52O-fD-MVQ">
-                        <barButtonItem key="rightBarButtonItem" title="Sort" id="D4Z-g3-oUp">
+                        <barButtonItem key="rightBarButtonItem" title="Sort" image="sortImage" id="D4Z-g3-oUp">
                             <connections>
                                 <action selector="sortMeals:" destination="ny2-IF-AEh" id="PW9-XB-BOB"/>
                             </connections>
@@ -92,4 +92,7 @@
             <point key="canvasLocation" x="538" y="-245"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sortImage" width="25" height="25"/>
+    </resources>
 </document>
